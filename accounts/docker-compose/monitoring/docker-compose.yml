@@ -32,7 +32,7 @@ services:
      - banksystem
 
   configserver:
-    image: banksystem/configserver:latest
+    image: jackieung451/banksystem-configserver:latest
     mem_limit: 700m
     ports:
       - "8071:8071"
@@ -45,7 +45,7 @@ services:
       SPRING_ZIPKIN_BASEURL: http://zipkin:9411/
       
   eurekaserver:
-    image: banksystem/eurekaserver:latest
+    image: jackieung451/banksystem-eurekaserver:latest
     mem_limit: 700m
     ports:
       - "8070:8070"
@@ -65,7 +65,7 @@ services:
       SPRING_ZIPKIN_BASEURL: http://zipkin:9411/
 
   accounts:
-    image: banksystem/accounts:latest
+    image: jackieung451/banksystem-accounts:latest
     mem_limit: 700m
     ports:
       - "8080:8080"
@@ -87,7 +87,7 @@ services:
       SPRING_ZIPKIN_BASEURL: http://zipkin:9411/
   
   loans:
-    image: banksystem/loans:latest
+    image: jackieung451/banksystem-loans:latest
     mem_limit: 700m
     ports:
       - "8090:8090"
@@ -109,7 +109,7 @@ services:
       SPRING_ZIPKIN_BASEURL: http://zipkin:9411/
     
   cards:
-    image: banksystem/cards:latest
+    image: jackieung451/banksystem-cards:latest
     mem_limit: 700m
     ports:
       - "9000:9000"
@@ -131,7 +131,7 @@ services:
       SPRING_ZIPKIN_BASEURL: http://zipkin:9411/
       
   gatewayserver:
-    image: banksystem/gatewayserver:latest
+    image: jackieung451/banksystem-gatewayserver:latest
     mem_limit: 700m
     ports:
       - "8072:8072"
