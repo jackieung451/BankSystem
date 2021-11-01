@@ -10,6 +10,12 @@ Resiliency mechansims are implemented with the Circuit Breaker pattern. For exam
 
 Inbound traffic management is controlled through Spring Cloud Gateway. This microservice acts as a central policy enforcement point to ensure that incoming requests are routed to their appropriate microservices. Furthermore, Spring Cloud Gateway has predicates to check if the incoming requests fulfill a set of conditions. After passing the predicates, the incoming requests will be processed into pre-filters where tracing and logging can be implemented to help with debugging. Furthermore, Zipkin Server is utilized as a central logging location. This is enhanced with asynchronous logs because if the Zipkin Server is ever down, the log statements will remain intact in the queue.
 
+
+![Screen Shot 2021-10-28 at 2 33 56 PM](https://user-images.githubusercontent.com/84652073/139631333-0c89f492-da35-43ec-a2e2-2776791b43dd.png)
+
+![Screen Shot 2021-10-28 at 2 38 09 PM](https://user-images.githubusercontent.com/84652073/139631462-ba8a0bfc-b4f1-4fb4-8e1d-83049b0ffecf.png)
+
+
 BankSystem's health and metrics are monitored through Grafana. Grafana's dashboards illustrate each microservice's performance, which can be used to interpolate how effective a microservice is operating and extract business decisions to scale the systems. Therefore, health and metrics can be benchmarked for future optimization of highly, scalable microservices systems.
 
 In terms of deployment, I used Amazon Web Services' Elastic BeanStalk, along with AWS RDS (MySQL version) for my accounts, loans, and cards databases. I chose a relational database in order to simulate financial instutions' database systems. Generally, financial instituions utilize relational databases to keep track of the customer's account as well as joining queries to find the corresponding cards and loans associated with each account. Therefore, the integration of a cloud database provides flexibility to access information in a "on-demand" basis and can reduce costs of maintaining/updating native databases.
